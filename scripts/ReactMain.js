@@ -155,16 +155,15 @@ class EachTask extends React.Component {
 }
 
 function Tasks (props) {
-  console.log("incpmplete tasks selection")
   var tasksToBeRendered = props.allTasks.map( function (task) {
     if (!task.completed && props.type === 'incomplete') {
       return (
-        <EachTask taskName={task.taskname} taskNotes={task.tasknotes} taskId={task.id}/>
+        <EachTask taskName={task.taskname} taskNotes={task.tasknotes} taskId={task.id} key={task.id}/>
       )
     }
     else if(task.completed && props.type === 'completed'){
       return (
-        <EachTask taskName={task.taskname} taskNotes={task.tasknotes} taskId={task.id}/>
+        <EachTask taskName={task.taskname} taskNotes={task.tasknotes} taskId={task.id} key={task.id}/>
       )
     }
   })
